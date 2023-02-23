@@ -68,5 +68,22 @@ export class HackereffectComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //blurry blob that follows the mouse in the background
+    const blob: HTMLElement | null = document.getElementById('blob');
+
+    if (blob) {
+      document.body.onpointermove = (event: PointerEvent) => {
+        const { clientX, clientY } = event;
+
+        blob.animate(
+          {
+            left: `${clientX}px`,
+            top: `${clientY}px`,
+          },
+          { duration: 3000, fill: 'forwards' }
+        );
+      };
+    }
+  }
 }
