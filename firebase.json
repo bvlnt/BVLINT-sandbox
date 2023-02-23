@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "dist/bvlintsandbox",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
