@@ -1,9 +1,29 @@
-<div class="min-h-screen overflow-hidden relative text-white font-mono">
+<div class="min-h-min mb-10 overflow-hidden relative text-white font-mono">
   <div class="mb-10 mt-10 text-7xl flex flex-col items-center justify-center">
     My Top 3 Recent Favourite Spotify Playlists
   </div>
-  <a class="link" href="" target="_blank">Soulflow - Deep/Future Breaks</a>
-  <a class="link" href="" target="_blank">Soulflow - Liquid/Soulfoul</a>
-  <a class="link" href="" target="_blank">House Music Flavours</a>
-  <router-outlet></router-outlet>
+  <a
+    class="link text-4xl"
+    href="https://open.spotify.com/playlist/4MLRIDNnAlDOTeLm5BKF92?si=56f55857109d43f8"
+    target="_blank"
+    (click)="toggleIframe()"
+  >
+    Soulflow - Deep/Future Breaks
+  </a>
+  <a
+    class="link text-4xl"
+    href="https://open.spotify.com/playlist/5MSjNnpiNj0pcIPCyWqD1J?si=14a6e6c864bb4f93"
+    target="_blank"
+    (click)="toggleIframe()"
+  >
+    Soulflow - Liquid/Soulful
+  </a>
+  <a
+    class="link text-4xl"
+    href="https://open.spotify.com/playlist/7hcl65AaAZLNobKJE9r1yu?si=78d267762e6d4054"
+    target="_blank"
+    (click)="toggleIframe()"
+  >
+    For The Floor | The Caracal Project
+  </a>
 </div>

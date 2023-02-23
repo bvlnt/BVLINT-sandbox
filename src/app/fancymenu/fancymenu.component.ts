@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fancymenu',
   templateUrl: './fancymenu.component.html',
-  styleUrls: ['./fancymenu.component.scss']
+  styleUrls: ['./fancymenu.component.scss'],
 })
-export class FancymenuComponent implements OnInit {
+export class FancymenuComponent {
+  public showIframe = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public toggleIframe() {
+    this.showIframe = !this.showIframe;
   }
-
 }
