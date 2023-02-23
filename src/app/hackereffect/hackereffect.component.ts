@@ -18,7 +18,7 @@ export class HackereffectComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const letters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,-*<>äđĐ[|Äˇ^~˘]{}()@&#łí˙`ł';
+      'abcdefghijklmnopqrstuvwxyz1234567890.,-*<>äđĐ[|Äˇ^~˘]{}()@&#łí˙`ł◙⠕⊹⑈☗ ∰ ፨ ☼ ⑇⊹⍜⤿☼╫§╜φ°⌂▌⛢٥≈ტ◊◙⠕⊹⑈☗ ∰ ፨ ☼ ⑇⊹⍜⤿☼╫§╜φ°⌂▌⛢٥≈ტ◊◙⠕⊹⑈☗ ∰ ፨ ☼ ⑇⊹⍜⤿☼╫§╜φ°⌂▌⛢٥≈ტ◊';
     const titleEl = this.title.nativeElement;
     const targetText = titleEl.dataset.value;
 
@@ -33,7 +33,7 @@ export class HackereffectComponent implements OnInit, AfterViewInit {
         }
 
         //iterations and duration to make the effect look desirable
-        let iteration = -10;
+        let iteration = -5;
         const maxIterations = targetText.length * 3;
         const duration = 750;
 

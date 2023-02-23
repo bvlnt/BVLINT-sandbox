@@ -1,0 +1,30 @@
+.link {
+    color: white;
+    display: block;
+    font-size: 2vw;
+    padding: 1vw 4vw;
+    margin: 0;
+    position: relative;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.link:hover:before {
+    transition: width 500ms ease;
+    width: 100%;
+}
+
+.link:before{
+    background: linear-gradient(to right,
+        transparent,
+        rgb(224, 211, 190),
+        mediumpurple,
+    );
+    
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0%;
+}
