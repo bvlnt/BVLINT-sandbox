@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import { fromEvent, interval } from 'rxjs';
 import { map, takeWhile } from 'rxjs/operators';
 
@@ -7,29 +13,38 @@ import { map, takeWhile } from 'rxjs/operators';
   templateUrl: './hackereffect.component.html',
   styleUrls: ['./hackereffect.component.scss'],
 })
-export class HackereffectComponent implements OnInit {
+export class HackereffectComponent implements OnInit, AfterViewInit {
   @ViewChild('title', { static: true }) title!: ElementRef;
 
-  ngOnInit(): void {
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  ngAfterViewInit(): void {
+    const letters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,-*<>äđĐ[|Äˇ^~˘]{}()@&#łí˙`ł';
     const titleEl = this.title.nativeElement;
     const targetText = titleEl.dataset.value;
 
     const mouseover$ = fromEvent(titleEl, 'mouseover');
+
     const effect$ = mouseover$.pipe(
       map(() => {
-        let currentText = 'ASDFGH';
-        let iteration = -1;
+        // currentText is the init text, I randomly init one that matches the target length
+        let currentText = '';
+        for (let i = 0; i < targetText.length; i++) {
+          currentText += letters[Math.floor(Math.random() * letters.length)];
+        }
+
+        //iterations and duration to make the effect look desirable
+        let iteration = -10;
         const maxIterations = targetText.length * 3;
-        const duration = 1000;
+        const duration = 750;
 
         return interval(duration / maxIterations).pipe(
           takeWhile(() => iteration < maxIterations),
           map(() => {
-            iteration++;
             const nextChar =
               letters[Math.floor(Math.random() * letters.length)];
-            currentText = currentText.substr(1) + nextChar;
+            currentText = currentText.substring(1) + nextChar;
+
+            //updating the text with the target character in the current index
             const updatedText = currentText
               .split('')
               .map((char, i) => {
@@ -39,6 +54,9 @@ export class HackereffectComponent implements OnInit {
                 return targetText.charAt(i);
               })
               .join('');
+
+            iteration++;
+
             return updatedText;
           })
         );
@@ -49,4 +67,6 @@ export class HackereffectComponent implements OnInit {
       text$.subscribe((text) => (titleEl.innerText = text));
     });
   }
+
+  ngOnInit(): void {}
 }
