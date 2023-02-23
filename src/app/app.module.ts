@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HackereffectComponent } from './hackereffect/hackereffect.component';
 import { FancymenuComponent } from './fancymenu/fancymenu.component';
+import { FooterComponent } from './footer/footer.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -23,7 +24,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 @NgModule({
-  declarations: [AppComponent, HackereffectComponent, FancymenuComponent],
+  declarations: [AppComponent, HackereffectComponent, FancymenuComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
