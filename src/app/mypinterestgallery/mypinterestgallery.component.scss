@@ -6,7 +6,9 @@
 
 .image[data-status="inactive"]{
     display:none;
+    position: relative;
 }
 .image[data-status="active"] {
     display: block;
+    position: absolute;
 }

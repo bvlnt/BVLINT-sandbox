@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-mypinterestgallery',
@@ -9,9 +8,37 @@ import { Subscription, fromEvent } from 'rxjs';
 export class MypinterestgalleryComponent implements OnInit {
   constructor() {}
 
-  //https://www.youtube.com/watch?v=Jt3A2lNN2aE todo holnapra
-
   ngOnInit(): void {
-    const images = document.getElementsByClassName('image');
+    const images = document.querySelectorAll('#my-gallery .image');
+    let globalIndex = 0;
+    let last = { x: 0, y: 0 };
+
+    const activate = (image: any, x: number, y: number) => {
+      image.style.left = `${x}px`;
+      image.style.top = `${y}px`;
+
+      image.dataset.status = 'active';
+
+      image.style.zIndex = `${globalIndex}`;
+
+      last = { x, y };
+    };
+
+    const distanceFromLast = (x: number, y: number) => {
+      return Math.hypot(x - last.x, y - last.y);
+    };
+
+    window.onmousemove = (e: MouseEvent) => {
+      if (distanceFromLast(e.clientX, e.clientY) > 200) {
+        const lead = images[globalIndex % images.length] as any;
+        const tail = images[(globalIndex - 8) % images.length] as any;
+
+        activate(lead, e.clientX, e.clientY);
+
+        if (tail) tail.dataset.status = 'inactive';
+
+        globalIndex++;
+      }
+    };
   }
 }
