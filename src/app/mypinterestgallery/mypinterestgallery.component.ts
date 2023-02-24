@@ -29,7 +29,7 @@ export class MypinterestgalleryComponent implements OnInit {
     };
 
     window.onmousemove = (e: MouseEvent) => {
-      if (distanceFromLast(e.clientX, e.clientY) > 200) {
+      if (distanceFromLast(e.clientX, e.clientY) > 100) {
         const lead = images[globalIndex % images.length] as any;
         const tail = images[(globalIndex - 8) % images.length] as any;
 
