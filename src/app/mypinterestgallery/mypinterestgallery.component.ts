@@ -10,6 +10,8 @@ export class MypinterestgalleryComponent implements OnInit {
 
   ngOnInit(): void {
     const images = document.querySelectorAll('#my-gallery .image');
+    const title = document.querySelector('#my-gallery .title') as any;
+
     let globalIndex = 0;
     let last = { x: 0, y: 0 };
 
@@ -20,6 +22,7 @@ export class MypinterestgalleryComponent implements OnInit {
       image.dataset.status = 'active';
 
       image.style.zIndex = `${globalIndex}`;
+      title.style.zIndex = `${globalIndex + 1}`;
 
       last = { x, y };
     };
@@ -31,7 +34,9 @@ export class MypinterestgalleryComponent implements OnInit {
     window.onmousemove = (e: MouseEvent) => {
       if (distanceFromLast(e.clientX, e.clientY) > 100) {
         const lead = images[globalIndex % images.length] as any;
-        const tail = images[(globalIndex - 8) % images.length] as any;
+        const tail = images[(globalIndex - 20) % images.length] as any;
+
+        console.log(tail);
 
         activate(lead, e.clientX, e.clientY);
 
