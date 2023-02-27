@@ -1,13 +1,15 @@
 <div
   id="starter-pokemons"
-  class="min-h-screen flex justify-center overflow-hidden relative border-t-2"
+  class="min-h-screen flex items-center justify-center overflow-hidden relative border-t-2"
 >
   <div class="pt-10 pl-10 text-white font-mono text-7xl top-0 left-0 absolute">
     <p>You can have one.</p>
     <p>Go on, choose!</p>
   </div>
-  <div id="pokemon-container" class="pt-72 select-none">
-    <div class="grid grid-cols-3 gap-5 w-auto h-50">
+  <div id="pokemon-container" class="select-none">
+    <div
+      class="grid grid-cols-3 gap-5 w-auto h-50 cursor-pointer drop-shadow-lg"
+    >
       <div
         *ngFor="let pokemon of starterPokemon"
         class="bg-gray-800 p-4 rounded-lg hover:bg-violet-700"
@@ -25,7 +27,7 @@
     </div>
     <div
       *ngIf="selectedPokemon"
-      class="rounded-lg w-full p-4 bg-gray-800 text-white mt-5 bg-violet-700"
+      class="rounded-lg w-full p-4 bg-gray-800 text-white mt-5 bg-violet-700 drop-shadow-lg"
     >
       <div class="text-xl font-bold font-mono">
         {{ selectedPokemon.name }}'s Evolution:
