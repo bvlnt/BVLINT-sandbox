@@ -2,7 +2,11 @@
   id="starter-pokemons"
   class="min-h-screen flex flex-col items-center justify-center overflow-hidden relative border-t-2"
 >
-  <div class="grid grid-cols-9 gap-5">
+  <div class="pt-10 pl-10 text-white font-mono text-7xl top-0 left-0 absolute">
+    <p>You can have one.</p>
+    <p>Go on, choose!</p>
+  </div>
+  <div class="grid grid-cols-3 gap-5 w-1/2 h-48">
     <div
       *ngFor="let pokemon of starterPokemon"
       class="bg-gray-800 p-4 rounded-lg"

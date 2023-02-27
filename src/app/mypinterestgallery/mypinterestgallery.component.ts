@@ -36,8 +36,6 @@ export class MypinterestgalleryComponent implements OnInit {
         const lead = images[globalIndex % images.length] as any;
         const tail = images[(globalIndex - 5) % images.length] as any;
 
-        console.log(tail);
-
         activate(lead, e.clientX, e.clientY);
 
         if (tail) tail.dataset.status = 'inactive';
