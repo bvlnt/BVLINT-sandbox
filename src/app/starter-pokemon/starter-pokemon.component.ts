@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StarterPokemonComponent implements OnInit {
   starterPokemon: any[] = [];
+  selectedPokemon: any;
 
   constructor(private http: HttpClient) {}
 
@@ -21,12 +22,29 @@ export class StarterPokemonComponent implements OnInit {
         });
         this.starterPokemon = filteredPokemon.map((pokemon: any) => {
           return {
-            name: pokemon.name,
+            name: `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(
+              1
+            )}`,
             imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
               pokemon.url.split('/')[6]
+            }.png`,
+            evolutionImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+              parseInt(pokemon.url.split('/')[6]) + 2
             }.png`,
           };
         });
       });
+  }
+
+  showEvolution(pokemon: any) {
+    if (!this.selectedPokemon || this.selectedPokemon.name !== pokemon.name) {
+      this.selectedPokemon = pokemon;
+    } else {
+      this.hideEvolution();
+    }
+  }
+
+  hideEvolution() {
+    this.selectedPokemon = null;
   }
 }

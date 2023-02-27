@@ -1,24 +1,40 @@
 <div
   id="starter-pokemons"
-  class="min-h-screen flex flex-col items-center justify-center overflow-hidden relative border-t-2"
+  class="min-h-screen flex justify-center overflow-hidden relative border-t-2"
 >
   <div class="pt-10 pl-10 text-white font-mono text-7xl top-0 left-0 absolute">
     <p>You can have one.</p>
     <p>Go on, choose!</p>
   </div>
-  <div class="grid grid-cols-3 gap-5 w-1/2 h-48">
+  <div id="pokemon-container" class="pt-72 select-none">
+    <div class="grid grid-cols-3 gap-5 w-auto h-50">
+      <div
+        *ngFor="let pokemon of starterPokemon"
+        class="bg-gray-800 p-4 rounded-lg hover:bg-violet-700"
+        (click)="showEvolution(pokemon)"
+      >
+        <img
+          [src]="pokemon.imageUrl"
+          alt="{{ pokemon.name }}"
+          class="mx-auto mb-2"
+        />
+        <h2 class="text-lg font-bold text-white font-mono text-center">
+          {{ pokemon.name }}
+        </h2>
+      </div>
+    </div>
     <div
-      *ngFor="let pokemon of starterPokemon"
-      class="bg-gray-800 p-4 rounded-lg"
+      *ngIf="selectedPokemon"
+      class="rounded-lg w-full p-4 bg-gray-800 text-white mt-5 bg-violet-700"
     >
+      <div class="text-xl font-bold font-mono">
+        {{ selectedPokemon.name }}'s Evolution:
+      </div>
       <img
-        [src]="pokemon.imageUrl"
-        alt="{{ pokemon.name }}"
+        [src]="selectedPokemon.evolutionImageUrl"
+        alt="{{ selectedPokemon.evolutionName }}"
         class="mx-auto mb-2"
       />
-      <h2 class="text-lg font-bold text-white font-mono text-center">
-        {{ pokemon.name }}
-      </h2>
     </div>
   </div>
 </div>

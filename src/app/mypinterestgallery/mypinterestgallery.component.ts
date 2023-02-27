@@ -30,8 +30,9 @@ export class MypinterestgalleryComponent implements OnInit {
     const distanceFromLast = (x: number, y: number) => {
       return Math.hypot(x - last.x, y - last.y);
     };
+    const myGallery = document.querySelector('#my-gallery') as HTMLElement;
 
-    window.onmousemove = (e: MouseEvent) => {
+    myGallery.onmousemove = (e: MouseEvent) => {
       if (distanceFromLast(e.clientX, e.clientY) > 100) {
         const lead = images[globalIndex % images.length] as any;
         const tail = images[(globalIndex - 5) % images.length] as any;
