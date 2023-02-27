@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
@@ -10,6 +11,7 @@ import { HackereffectComponent } from './hackereffect/hackereffect.component';
 import { FancymenuComponent } from './fancymenu/fancymenu.component';
 import { FooterComponent } from './footer/footer.component';
 import { MypinterestgalleryComponent } from './mypinterestgallery/mypinterestgallery.component';
+import { StarterPokemonComponent } from './starter-pokemon/starter-pokemon.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -25,8 +27,15 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 @NgModule({
-  declarations: [AppComponent, HackereffectComponent, FancymenuComponent, FooterComponent, MypinterestgalleryComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    HackereffectComponent,
+    FancymenuComponent,
+    FooterComponent,
+    MypinterestgalleryComponent,
+    StarterPokemonComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
