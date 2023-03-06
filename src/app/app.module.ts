@@ -12,6 +12,7 @@ import { FancymenuComponent } from './fancymenu/fancymenu.component';
 import { FooterComponent } from './footer/footer.component';
 import { MypinterestgalleryComponent } from './mypinterestgallery/mypinterestgallery.component';
 import { StarterPokemonComponent } from './starter-pokemon/starter-pokemon.component';
+import { MastheadVidComponent } from './masthead-vid/masthead-vid.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -34,6 +35,7 @@ const analytics = getAnalytics(app);
     FooterComponent,
     MypinterestgalleryComponent,
     StarterPokemonComponent,
+    MastheadVidComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
