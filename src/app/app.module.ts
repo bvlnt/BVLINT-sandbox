@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
@@ -13,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MypinterestgalleryComponent } from './mypinterestgallery/mypinterestgallery.component';
 import { StarterPokemonComponent } from './starter-pokemon/starter-pokemon.component';
 import { MastheadVidComponent } from './masthead-vid/masthead-vid.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -36,8 +38,15 @@ const analytics = getAnalytics(app);
     MypinterestgalleryComponent,
     StarterPokemonComponent,
     MastheadVidComponent,
+    ContactFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
