@@ -33,7 +33,7 @@ export class ThreejsrendererComponent implements AfterViewInit {
     // Create the camera
     const aspectRatio = window.innerWidth / window.innerHeight;
     this.camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
-    this.camera.position.z = 5;
+    this.camera.position.z = 3.5;
     this.camera.position.y = 1.3;
 
     // Rotate the model
@@ -51,11 +51,14 @@ export class ThreejsrendererComponent implements AfterViewInit {
     spotLight.shadow.camera.near = 500;
     spotLight.shadow.camera.far = 4000;
     spotLight.shadow.camera.fov = 30;
-    this.scene.add(spotLight);
+    const light = new THREE.PointLight(0xff0000, 1, 100);
+    light.position.set(5, 5, 5);
+    const light2 = new THREE.PointLight(0x0000ff, 1, 100);
+    light.position.set(0, 0, 3);
+    this.scene.add(spotLight, light, light2);
 
     // Create the renderer
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor(0xffffff);
+    this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.container.appendChild(this.renderer.domElement);
