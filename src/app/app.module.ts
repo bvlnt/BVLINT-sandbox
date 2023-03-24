@@ -18,6 +18,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ThreejsrendererComponent } from './threejsrenderer/threejsrenderer.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { BlogComponent } from './blog/blog.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -45,6 +46,7 @@ const analytics = getAnalytics(app);
     ThreejsrendererComponent,
     HomeComponent,
     NavComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
