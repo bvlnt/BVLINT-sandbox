@@ -16,6 +16,8 @@ import { StarterPokemonComponent } from './starter-pokemon/starter-pokemon.compo
 import { MastheadVidComponent } from './masthead-vid/masthead-vid.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ThreejsrendererComponent } from './threejsrenderer/threejsrenderer.component';
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -41,6 +43,8 @@ const analytics = getAnalytics(app);
     MastheadVidComponent,
     ContactFormComponent,
     ThreejsrendererComponent,
+    HomeComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
