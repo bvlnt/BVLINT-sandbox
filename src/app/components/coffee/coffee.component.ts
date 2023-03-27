@@ -12,8 +12,16 @@ export class CoffeeComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCoffees();
+    console.log(this.coffees);
+  }
 
-  //get me coffees with ingreadients from an api https://api.sampleapis.com/coffee/hot that I want to display in the html, using http get call
-  getCoffees() {}
+  getCoffees() {
+    this.http
+      .get('https://api.sampleapis.com/coffee/hot')
+      .subscribe((response) => {
+        this.coffees = response as Coffee[];
+      });
+  }
 }
