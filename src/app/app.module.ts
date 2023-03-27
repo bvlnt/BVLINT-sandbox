@@ -8,17 +8,17 @@ import { getAnalytics } from 'firebase/analytics';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HackereffectComponent } from './hackereffect/hackereffect.component';
-import { FancymenuComponent } from './fancymenu/fancymenu.component';
+import { HackereffectComponent } from './components/hackereffect/hackereffect.component';
+import { FancymenuComponent } from './components/fancymenu/fancymenu.component';
 import { FooterComponent } from './footer/footer.component';
-import { MypinterestgalleryComponent } from './mypinterestgallery/mypinterestgallery.component';
-import { StarterPokemonComponent } from './starter-pokemon/starter-pokemon.component';
-import { MastheadVidComponent } from './masthead-vid/masthead-vid.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { ThreejsrendererComponent } from './threejsrenderer/threejsrenderer.component';
+import { MypinterestgalleryComponent } from './components/mypinterestgallery/mypinterestgallery.component';
+import { StarterPokemonComponent } from './components/starter-pokemon/starter-pokemon.component';
+import { MastheadVidComponent } from './components/masthead-vid/masthead-vid.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ThreejsrendererComponent } from './components/threejsrenderer/threejsrenderer.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { BlogComponent } from './blog/blog.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',

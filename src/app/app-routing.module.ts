@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogComponent } from './blog/blog.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { FancymenuComponent } from './fancymenu/fancymenu.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { FancymenuComponent } from './components/fancymenu/fancymenu.component';
 import { HomeComponent } from './home/home.component';
-import { MypinterestgalleryComponent } from './mypinterestgallery/mypinterestgallery.component';
-import { StarterPokemonComponent } from './starter-pokemon/starter-pokemon.component';
-import { ThreejsrendererComponent } from './threejsrenderer/threejsrenderer.component';
+import { MypinterestgalleryComponent } from './components/mypinterestgallery/mypinterestgallery.component';
+import { StarterPokemonComponent } from './components/starter-pokemon/starter-pokemon.component';
+import { ThreejsrendererComponent } from './components/threejsrenderer/threejsrenderer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

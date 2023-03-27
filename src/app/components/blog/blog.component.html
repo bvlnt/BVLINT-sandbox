@@ -1,0 +1,13 @@
+<div class="min-h-screen font-mono text-white p-12">
+  <h1 class="text-6xl pb-6">Experimenting with Strapi</h1>
+  <h2 class="text-4xl">WIP, only works locally</h2>
+  <div
+    class="max-w-sm rounded overflow-hidden shadow-lg"
+    *ngFor="let blog of blogs"
+  >
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2 text-white">{{ blog | json }}</div>
+      <p class="text-gray-700 text-base"></p>
+    </div>
+  </div>
+</div>

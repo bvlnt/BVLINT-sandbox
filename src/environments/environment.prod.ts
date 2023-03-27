@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  strapiUrl: 'http://localhost:1337/api',
 };

@@ -7,19 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
-  blogposts = [];
+  blogs = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.fetchBlogposts();
-
-    console.log(this.blogposts);
+    this.fetchBlogs();
   }
 
-  fetchBlogposts() {
+  fetchBlogs() {
     this.http
       .get('http://localhost:1337/api/blogs')
-      .subscribe((data: any) => (this.blogposts = data.data));
+      .subscribe((data: any) => (this.blogs = data.data));
   }
 }
