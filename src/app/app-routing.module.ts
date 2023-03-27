@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MypinterestgalleryComponent } from './components/mypinterestgallery/mypinterestgallery.component';
 import { StarterPokemonComponent } from './components/starter-pokemon/starter-pokemon.component';
 import { ThreejsrendererComponent } from './components/threejsrenderer/threejsrenderer.component';
+import { CoffeeComponent } from './components/coffee/coffee.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'pokemon', component: StarterPokemonComponent },
   { path: 'contact', component: ContactFormComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'coffee', component: CoffeeComponent },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
