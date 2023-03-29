@@ -19,7 +19,7 @@ import { ThreejsrendererComponent } from './components/threejsrenderer/threejsre
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { BlogComponent } from './components/blog/blog.component';
-import { CoffeeComponent } from './components/coffee/coffee.component';
+import { SpacedashboardComponent } from './spacedashboard/spacedashboard.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -48,7 +48,7 @@ const analytics = getAnalytics(app);
     HomeComponent,
     NavComponent,
     BlogComponent,
-    CoffeeComponent,
+    SpacedashboardComponent,
   ],
   imports: [
     BrowserModule,
