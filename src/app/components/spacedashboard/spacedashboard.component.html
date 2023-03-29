@@ -1,0 +1,14 @@
+<div class="min-w-screen">
+  <div class="pt-12 pb-12 px-32">
+    <div class="flex flex-col items-center">
+      <h1 class="text-5xl font-mono font-bold text-white pb-6">
+        Astronomy Picture Of The Day
+      </h1>
+      <h2 class="text-3xl font-mono text-white pb-12">
+        {{ Apod?.title }}
+      </h2>
+    </div>
+
+    <img [src]="Apod?.hdurl" class="max-w-6xl mx-auto border-solid" />
+  </div>
+</div>

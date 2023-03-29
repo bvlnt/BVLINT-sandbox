@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MypinterestgalleryComponent } from './components/mypinterestgallery/mypinterestgallery.component';
 import { StarterPokemonComponent } from './components/starter-pokemon/starter-pokemon.component';
 import { ThreejsrendererComponent } from './components/threejsrenderer/threejsrenderer.component';
-import { SpacedashboardComponent } from './spacedashboard/spacedashboard.component';
+import { SpacedashboardComponent } from './components/spacedashboard/spacedashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
