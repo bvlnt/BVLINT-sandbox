@@ -10,14 +10,17 @@ import { Apod } from '../../interfaces/spacedashboard.interface';
 export class SpacedashboardComponent implements OnInit {
   Apod: Apod | undefined;
 
-  imageUrl: string | undefined;
+  imageUrlNavcam: string | undefined;
+  imageUrlChemcam: string | undefined;
   earthDate: string | undefined;
+  sol: string | undefined;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getAPOD();
-    this.getLatestPhoto();
+    this.getLatestNavcamPhoto();
+    this.getLatestChemcamPhoto();
   }
 
   getAPOD() {
@@ -31,7 +34,7 @@ export class SpacedashboardComponent implements OnInit {
       });
   }
 
-  getLatestPhoto() {
+  getLatestNavcamPhoto() {
     this.http
       .get(
         'https://api.nasa.gov/mars-photos/api/v1/rovers/Curiosity/latest_photos?api_key=uK5HH7WWn22qEfk2Q7NZTFqD49yk7alwesPM3T3k'
@@ -43,8 +46,28 @@ export class SpacedashboardComponent implements OnInit {
         );
         if (navCamPhotos.length > 0) {
           const latestNavCamPhoto = navCamPhotos[0];
-          this.imageUrl = latestNavCamPhoto.img_src;
+          this.imageUrlNavcam = latestNavCamPhoto.img_src;
           this.earthDate = latestNavCamPhoto.earth_date;
+          this.sol = latestNavCamPhoto.sol;
+        }
+      });
+  }
+
+  getLatestChemcamPhoto() {
+    this.http
+      .get(
+        'https://api.nasa.gov/mars-photos/api/v1/rovers/Curiosity/latest_photos?api_key=uK5HH7WWn22qEfk2Q7NZTFqD49yk7alwesPM3T3k'
+      )
+      .subscribe((data: any) => {
+        const navCamPhotos = data.latest_photos.filter(
+          (photo: { camera: { name: string } }) =>
+            photo.camera.name === 'CHEMCAM'
+        );
+        if (navCamPhotos.length > 0) {
+          const latestNavCamPhoto = navCamPhotos[0];
+          this.imageUrlChemcam = latestNavCamPhoto.img_src;
+          this.earthDate = latestNavCamPhoto.earth_date;
+          this.sol = latestNavCamPhoto.sol;
         }
       });
   }

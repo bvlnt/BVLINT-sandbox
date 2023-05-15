@@ -14,12 +14,26 @@
   <div class="pt-12 pb-12 px-32">
     <div class="flex flex-col items-center">
       <h1 class="text-5xl font-mono font-bold text-white pb-6">
-        Recent <span class="underline">Curiosity</span> Mars Rover Image
+        Recent <span class="underline">Curiosity</span> Mars Rover Images
       </h1>
-      <h2 class="text-4xl font-mono font-bold text-white pb-6">
+      <h2 class="text-4xl font-mono text-white pb-6">
         Earth date: {{ earthDate }}
       </h2>
-      <img [src]="imageUrl" class="max-w-6xl mx-auto border-solid" />
+      <h2 class="text-4xl font-mono text-white pb-6">Sol: {{ sol }}</h2>
+      <div
+        class="grid grid-cols-2 gap-32 content-center items-center text-center"
+      >
+        <div>
+          <h1 class="text-4xl font-mono text-white pb-6">Navigation Camera</h1>
+          <img [src]="imageUrlNavcam" class="h-96 mx-auto border-solid" />
+        </div>
+        <div>
+          <h1 class="text-4xl font-mono text-white pb-6">
+            Chemistry and Camera Complex
+          </h1>
+          <img [src]="imageUrlChemcam" class="h-96 mx-auto border-solid" />
+        </div>
+      </div>
     </div>
   </div>
 </div>
