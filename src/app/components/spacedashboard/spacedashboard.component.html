@@ -14,9 +14,11 @@
   <div class="pt-12 pb-12 px-32">
     <div class="flex flex-col items-center">
       <h1 class="text-5xl font-mono font-bold text-white pb-6">
-        Recent Mars Rover Image
+        Recent <span class="underline">Curiosity</span> Mars Rover Image
       </h1>
-      <h2>Earth date: {{ earthDate }}</h2>
+      <h2 class="text-4xl font-mono font-bold text-white pb-6">
+        Earth date: {{ earthDate }}
+      </h2>
       <img [src]="imageUrl" class="max-w-6xl mx-auto border-solid" />
     </div>
   </div>

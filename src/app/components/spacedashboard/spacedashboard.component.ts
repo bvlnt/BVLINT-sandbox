@@ -10,9 +10,6 @@ import { Apod } from '../../interfaces/spacedashboard.interface';
 export class SpacedashboardComponent implements OnInit {
   Apod: Apod | undefined;
 
-  private apiUrl =
-    'https://api.nasa.gov/mars-photos/api/v1/rovers/Curiosity/latest_photos?api_key=uK5HH7WWn22qEfk2Q7NZTFqD49yk7alwesPM3T3k';
-
   imageUrl: string | undefined;
   earthDate: string | undefined;
 
@@ -24,9 +21,10 @@ export class SpacedashboardComponent implements OnInit {
   }
 
   getAPOD() {
-    const apiKey = 'uK5HH7WWn22qEfk2Q7NZTFqD49yk7alwesPM3T3k';
     this.http
-      .get('https://api.nasa.gov/planetary/apod?api_key=${apiKey}')
+      .get(
+        'https://api.nasa.gov/planetary/apod?api_key=uK5HH7WWn22qEfk2Q7NZTFqD49yk7alwesPM3T3k'
+      )
       .subscribe((response) => {
         this.Apod = response as Apod;
         console.log(this.Apod);
@@ -34,15 +32,20 @@ export class SpacedashboardComponent implements OnInit {
   }
 
   getLatestPhoto() {
-    this.http.get(this.apiUrl).subscribe((data: any) => {
-      const navCamPhotos = data.latest_photos.filter(
-        (photo: { camera: { name: string } }) => photo.camera.name === 'NAVCAM'
-      );
-      if (navCamPhotos.length > 0) {
-        const latestNavCamPhoto = navCamPhotos[0];
-        this.imageUrl = latestNavCamPhoto.img_src;
-        this.earthDate = latestNavCamPhoto.earth_date;
-      }
-    });
+    this.http
+      .get(
+        'https://api.nasa.gov/mars-photos/api/v1/rovers/Curiosity/latest_photos?api_key=uK5HH7WWn22qEfk2Q7NZTFqD49yk7alwesPM3T3k'
+      )
+      .subscribe((data: any) => {
+        const navCamPhotos = data.latest_photos.filter(
+          (photo: { camera: { name: string } }) =>
+            photo.camera.name === 'NAVCAM'
+        );
+        if (navCamPhotos.length > 0) {
+          const latestNavCamPhoto = navCamPhotos[0];
+          this.imageUrl = latestNavCamPhoto.img_src;
+          this.earthDate = latestNavCamPhoto.earth_date;
+        }
+      });
   }
 }
