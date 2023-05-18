@@ -22,7 +22,7 @@ export class ThreejsrendererComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.container = this.containerRef.nativeElement;
     this.initScene();
-    this.loadModel('assets/lancia/scene.gltf');
+    this.loadModel('assets/pork/scene.gltf');
     this.render();
   }
 
@@ -43,7 +43,7 @@ export class ThreejsrendererComponent implements AfterViewInit {
     }
 
     // Create the spotlight
-    const spotLight = new THREE.SpotLight(0xffffff, 4);
+    const spotLight = new THREE.SpotLight(0xffffff, 16);
     spotLight.position.set(100, 1000, 100);
     spotLight.castShadow = true;
     spotLight.shadow.mapSize.width = 1024;
