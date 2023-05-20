@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { SpacedashboardComponent } from './components/spacedashboard/spacedashboard.component';
+import { TechComponent } from './components/tech/tech.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBs0FmL75Xgi6DbdZbotLbRorSJqGetssc',
@@ -49,6 +50,7 @@ const analytics = getAnalytics(app);
     NavComponent,
     BlogComponent,
     SpacedashboardComponent,
+    TechComponent,
   ],
   imports: [
     BrowserModule,

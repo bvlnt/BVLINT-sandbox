@@ -8,6 +8,7 @@ import { MypinterestgalleryComponent } from './components/mypinterestgallery/myp
 import { StarterPokemonComponent } from './components/starter-pokemon/starter-pokemon.component';
 import { ThreejsrendererComponent } from './components/threejsrenderer/threejsrenderer.component';
 import { SpacedashboardComponent } from './components/spacedashboard/spacedashboard.component';
+import { TechComponent } from './components/tech/tech.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'pinterest', component: MypinterestgalleryComponent },
   { path: 'pokemon', component: StarterPokemonComponent },
   { path: 'contact', component: ContactFormComponent },
+  { path: 'tech', component: TechComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'spacedashboard', component: SpacedashboardComponent },
   { path: '**', redirectTo: '/home' },
