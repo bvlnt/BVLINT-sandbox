@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Angular
 - Tailwindcss
 - ThreeJS
-- GSAP
+- Motion One
 - Strapi
 ## Used APIs
 - NASA API
