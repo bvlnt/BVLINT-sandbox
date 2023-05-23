@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { animate, stagger } from 'motion';
 
 @Component({
@@ -7,9 +7,33 @@ import { animate, stagger } from 'motion';
   styleUrls: ['./tech.component.scss'],
 })
 export class TechComponent implements AfterViewInit {
-  constructor() {}
+  private animated = false;
+
+  constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit(): void {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // Adjust this value as per your needs
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !this.animated) {
+          this.animateListItems();
+          this.animated = true;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    const listItemElements =
+      this.elementRef.nativeElement.querySelectorAll('.list-item');
+    listItemElements.forEach((item: Element) => observer.observe(item));
+  }
+
+  animateListItems(): void {
     animate(
       '.list-item',
       { x: 200 },
