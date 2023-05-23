@@ -21,23 +21,9 @@ export class HackereffectComponent implements OnInit, AfterViewInit {
     const letters =
       'abcdefghijklmnopqrstuvwxyz1234567890.,-*<>äđĐ[|Äˇ^~˘]{}()@&#łí˙`ł◙⠕⊹⑈☗ ∰ ፨ ☼ ⑇⊹⍜⤿☼╫§╜φ°⌂▌⛢٥≈ტ◊◙⠕⊹⑈☗ ∰ ፨ ☼ ⑇⊹⍜⤿☼╫§╜φ°⌂▌⛢٥≈ტ◊◙⠕⊹⑈☗ ∰ ፨ ☼ ⑇⊹⍜⤿☼╫§╜φ°⌂▌⛢٥≈ტ◊';
     const titleEl = this.title.nativeElement;
-    const desc = document.querySelector('#desc');
     const targetText = titleEl.dataset.value;
 
     const mouseover$ = fromEvent(titleEl, 'mouseover');
-
-    const titleAnimation = gsap.from(titleEl, {
-      opacity: 0,
-      x: -200,
-      duration: 1,
-      ease: 'power3.in',
-    });
-    const descAnimation = gsap.from(desc, {
-      opacity: 0,
-      x: -200,
-      duration: 2,
-      ease: 'power3.in',
-    });
 
     const effect$ = mouseover$.pipe(
       map(() => {
